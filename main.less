@@ -1,0 +1,120 @@
+/* centering the login form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    margin: 0 auto;
+    
+}
+
+/* Centering .ilFormHeader and .ilFormFooter */
+.ilFormHeader, .ilFormFooter {
+    text-align: center;
+    color: #161616;
+    background-color: #f0f0f0;
+}
+
+/*changing the colour of form horizontal*/
+
+.form-horizontal {
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+.ilFormFooter {
+    text-align: center;
+    padding: 3px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+}
+
+
+.ilFormFooter .centered-element {
+    margin: 10px 0; /* Add margin between elements */
+}
+
+
+@media screen and (max-width: 768px) {
+    .ilFormFooter .ilFormCmds {
+        padding-top: 20px;
+    }
+}
+
+/*the button and stuff*/
+.ilFormFooter .ilFormCmds input.btn {
+    margin: 10px auto; /* add a small responsive margin from the top and horizontally center */
+    padding: 8px 65px; /* increase padding to make the button a bit bigger */
+    font-size: 12px; 
+}
+
+
+.ilFormFooter .ilFormCmds {
+    text-align: right;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.ilFormFooter .ilFormCmds .centered-element {
+    margin-left: auto;
+}
+
+
+
+
+/*for the required to be centered*/
+
+@media (min-width: 768px){
+.col-sm-6 {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}}
+
+/*Adjusting the input column for the username a little bit*/
+
+.col-sm-9 {
+    width: 50%;
+}
+
+.ilFormFooter {
+    text-align: center;
+    padding: 3px 0;
+}
+
+
+/* Centering the login information element */
+.small {
+    text-align: center; /* Center-align the text */
+    margin: 10px 0; /* Add some margin for spacing */
+}
+
+
+
+/*for the button*/
+.login-form input.btn {
+    margin-top: 20px; /* Add some margin to space it from other elements */
+    align-self: center; /* Center-align the button horizontally */
+}
+
+/* I think it's better to center each element individually ,
+for ilStartupSection class it's done as follows*/
+.ilStartupSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0; 
+}
+
+/* for the ilStartupSection p class*/
+.ilStartupSection p {
+    text-align: center;
+}
+

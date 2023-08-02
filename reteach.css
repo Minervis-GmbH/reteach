@@ -8804,6 +8804,9 @@ fieldset[disabled] .il-table-presentation-viewcontrols .btn-default.engaged.focu
 .il-table-data .header.cell {
   font-weight: bold;
 }
+.il-workflow {
+  word-break: break-word;
+}
 .il-workflow-header .il-workflow-title {
   background-color: #f0f0f0;
   color: #4c6586;
@@ -13032,6 +13035,7 @@ div.ilSideBarContent {
   background-color: white;
   border: 1px solid #dddddd;
   font-size: 90%;
+  z-index: 5;
   -webkit-box-shadow: 2px 2px 4px #c0c0c0;
   box-shadow: 2px 2px 4px #c0c0c0;
 }
@@ -14293,7 +14297,6 @@ html.ilc_Fullscreen td > div,
 body.ilc_Fullscreen td > div,
 html.ilc_Fullscreen td > div > figure > div > iframe,
 body.ilc_Fullscreen td > div > figure > div > iframe {
-  height: 100%;
   width: 100%;
 }
 div.ilLMMenu {
@@ -19469,6 +19472,11 @@ div.ilc_Question {
   border: 1px solid #C0C0C0;
   padding: 0.25em;
   margin-top: 1em;
+  padding: 15px;
+}
+.questionPrintview .row.ilc_qanswer_Answer {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .solutionbox {
   color: black;
@@ -19920,7 +19928,8 @@ div.ilc_Page.readonly textarea[disabled] {
   font-size: 14px;
 }
 li.dd-item.ilc_qordli_OrderListItem > ul li.dd-item.ilc_qordli_OrderListItem {
-  border: 2px white solid;
+  border: 1px #4c6586 solid;
+  border-left: 9px #4c6586 solid;
 }
 .noMargin {
   margin: 0;
@@ -20170,6 +20179,105 @@ table.mceToolbar td {
   line-height: 2;
   border: 1px solid #dddddd;
   border-radius: 0.25em;
+}
+/* centering the login form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  margin: 0 auto;
+}
+/* Centering .ilFormHeader and .ilFormFooter */
+.ilFormHeader,
+.ilFormFooter {
+  text-align: center;
+  color: #161616;
+  background-color: #f0f0f0;
+}
+/*changing the colour of form horizontal*/
+.form-horizontal {
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+.ilFormFooter {
+  text-align: center;
+  padding: 3px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.ilFormFooter .centered-element {
+  margin: 10px 0;
+  /* Add margin between elements */
+}
+@media screen and (max-width: 768px) {
+  .ilFormFooter .ilFormCmds {
+    padding-top: 20px;
+  }
+}
+/*the button and stuff*/
+.ilFormFooter .ilFormCmds input.btn {
+  margin: 10px auto;
+  /* add a small responsive margin from the top and horizontally center */
+  padding: 8px 65px;
+  /* increase padding to make the button a bit bigger */
+  font-size: 12px;
+}
+.ilFormFooter .ilFormCmds {
+  text-align: right;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.ilFormFooter .ilFormCmds .centered-element {
+  margin-left: auto;
+}
+/*for the required to be centered*/
+@media (min-width: 768px) {
+  .col-sm-6 {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+/*Adjusting the input column for the username a little bit*/
+.col-sm-9 {
+  width: 50%;
+}
+.ilFormFooter {
+  text-align: center;
+  padding: 3px 0;
+}
+/* Centering the login information element */
+.small {
+  text-align: center;
+  /* Center-align the text */
+  margin: 10px 0;
+  /* Add some margin for spacing */
+}
+/*for the button*/
+.login-form input.btn {
+  margin-top: 20px;
+  /* Add some margin to space it from other elements */
+  align-self: center;
+  /* Center-align the button horizontally */
+}
+/* I think it's better to center each element individually ,
+for ilStartupSection class it's done as follows*/
+.ilStartupSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+/* for the ilStartupSection p class*/
+.ilStartupSection p {
+  text-align: center;
 }
 /**
 This file contains all less Variables set by ILIAS. Please do not overwrite bootstrap standard variables here.
