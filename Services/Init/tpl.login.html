@@ -41,7 +41,9 @@
 	<!-- END agreement -->
 </div>
 </div>
+
 <script>
+
 <!--
 if (document.formlogin.username && document.formlogin.password)
 {
@@ -49,4 +51,22 @@ if (document.formlogin.username && document.formlogin.password)
 	else document.formlogin.username.focus();
 }
 //-->
+
+document.addEventListener("DOMContentLoaded", function() {
+    const usernameInput = document.querySelector("input[name='username']");
+    const passwordInput = document.querySelector("input[name='password']");
+
+    if (usernameInput && passwordInput) {
+        usernameInput.placeholder = "Username";
+        passwordInput.placeholder = "Password";
+
+        usernameInput.addEventListener("input", function() {
+            this.placeholder = "Username*";
+        });
+
+        passwordInput.addEventListener("input", function() {
+            this.placeholder = "Password*";
+        });
+    }
+});
 </script>

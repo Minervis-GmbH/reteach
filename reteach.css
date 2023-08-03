@@ -20187,19 +20187,56 @@ table.mceToolbar td {
   justify-content: center;
   align-items: center;
   height: 65vh;
+  width: 40vh;
   margin: 0 auto;
 }
-/* Centering .ilFormHeader and .ilFormFooter */
+.breadcrumbs {
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: white;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  -ms-grid-row: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 3;
+  z-index: 998;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  /* Ensure proper positioning for pseudo-element */
+  /* Add pseudo-element to create combined border in the middle */
+}
+.breadcrumbs::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  height: 8px;
+  border-top: 8px solid red;
+  /*red border at the top */
+  border-bottom: 8px solid yellowgreen;
+  /* Green border at the bottom */
+  z-index: -1;
+  /*place behind the content */
+}
+/* centering .ilFormHeader and .ilFormFooter */
 .ilFormHeader,
 .ilFormFooter {
   text-align: center;
+  margin: 10px auto;
   color: #161616;
-  background-color: #f0f0f0;
+  background-color: yellowgreen;
 }
 /*changing the colour of form horizontal*/
 .form-horizontal {
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+  margin-bottom: 5px;
+  background-color: yellowgreen;
 }
 .ilFormFooter {
   text-align: center;
@@ -20210,9 +20247,32 @@ table.mceToolbar td {
   justify-content: center;
   height: 100%;
 }
+/*removing the labels we replaced with placeholders with javascript earlier*/
+/* remove label text but keep the spacing */
+.form-horizontal .control-label {
+  color: transparent;
+  /* Make the label text transparent */
+  padding-bottom: 4px;
+  min-height: 34px;
+}
+/*removing the asterisk for the control label element but keeping it in use for the later required word for the button*/
+.form-horizontal .control-label .asterisk {
+  color: transparent;
+  font-size: 90%;
+}
+/*allign the boxes centerally*/
+.form-horizontal .form-group {
+  margin: 2px auto;
+  padding: 0;
+}
+div.ilStartupSection form.form-horizontal {
+  text-align: left;
+  width: 40em;
+  background-color: yellowgreen;
+}
 .ilFormFooter .centered-element {
-  margin: 10px 0;
-  /* Add margin between elements */
+  margin: 5px 0;
+  /*add margin between elements */
 }
 @media screen and (max-width: 768px) {
   .ilFormFooter .ilFormCmds {
@@ -20221,11 +20281,14 @@ table.mceToolbar td {
 }
 /*the button and stuff*/
 .ilFormFooter .ilFormCmds input.btn {
-  margin: 10px auto;
+  margin: 2px auto;
   /* add a small responsive margin from the top and horizontally center */
-  padding: 8px 65px;
-  /* increase padding to make the button a bit bigger */
-  font-size: 12px;
+  font-size: 15px;
+  width: 89%;
+  display: block;
+  text-align: center;
+  padding-left: 10px;
+  height: 40px;
 }
 .ilFormFooter .ilFormCmds {
   text-align: right;
@@ -20240,13 +20303,15 @@ table.mceToolbar td {
 @media (min-width: 768px) {
   .col-sm-6 {
     width: 50%;
-    text-align: center;
+    text-align: left;
     margin: 0 auto;
   }
 }
 /*Adjusting the input column for the username a little bit*/
-.col-sm-9 {
-  width: 50%;
+@media (min-width: 768px) {
+  .col-sm-9 {
+    width: 50%;
+  }
 }
 .ilFormFooter {
   text-align: center;
@@ -20262,9 +20327,9 @@ table.mceToolbar td {
 /*for the button*/
 .login-form input.btn {
   margin-top: 20px;
-  /* Add some margin to space it from other elements */
+  /* add some margin to space it from other elements */
   align-self: center;
-  /* Center-align the button horizontally */
+  /* center-align the button horizontally */
 }
 /* I think it's better to center each element individually ,
 for ilStartupSection class it's done as follows*/
@@ -20273,11 +20338,19 @@ for ilStartupSection class it's done as follows*/
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10px 0;
+  margin: 0px 0px;
+  background-color: yellowgreen;
 }
 /* for the ilStartupSection p class*/
 .ilStartupSection p {
   text-align: center;
+}
+.form-control,
+.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  height: 29px;
+  /* adjust this value as needed */
 }
 /**
 This file contains all less Variables set by ILIAS. Please do not overwrite bootstrap standard variables here.
